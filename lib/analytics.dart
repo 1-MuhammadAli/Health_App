@@ -32,7 +32,7 @@ class _AnalyticsState extends State<Analytics> {
 
   Widget titleView() {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 7),
       child: Text(
         date_util.DateUtils.months[currentDateTime.month - 1] +
             ' ' +
@@ -46,7 +46,7 @@ class _AnalyticsState extends State<Analytics> {
   Widget hrizontalCapsuleListView() {
     return Container(
       width: width,
-      height: 95,
+      height: 75,
       child: ListView.builder(
         controller: scrollController,
         scrollDirection: Axis.horizontal,
@@ -73,10 +73,10 @@ class _AnalyticsState extends State<Analytics> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 70,
-                height: 70,
+                width: 50,
+                height: 50,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(10),
                     color: (currentMonthList[index].day != currentDateTime.day)
                     ? const Color(0xffBBF246)
                     : Colors.black,
@@ -113,7 +113,7 @@ class _AnalyticsState extends State<Analytics> {
                         date_util.DateUtils
                             .weekdays[currentMonthList[index].weekday - 1],
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 10,
                             fontWeight: FontWeight.bold,
                             color:
                             (currentMonthList[index].day != currentDateTime.day)
@@ -123,7 +123,7 @@ class _AnalyticsState extends State<Analytics> {
                       Text(
                         currentMonthList[index].day.toString(),
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 10,
                             fontWeight: FontWeight.bold,
                             color:
                             (currentMonthList[index].day != currentDateTime.day)
@@ -136,7 +136,7 @@ class _AnalyticsState extends State<Analytics> {
                 ),
               ),
               const SizedBox(
-                height: 15,
+                height: 5,
               ),
               currentMonthList[index].day != currentDateTime.day ?
               Container() : Container(
@@ -169,8 +169,8 @@ class _AnalyticsState extends State<Analytics> {
   Widget caloriesView(){
     return Container(
       width: width*0.4,
-      height: height*0.107,
-      padding: EdgeInsets.only(top: height*0.01,left: width*0.01, bottom: height*0.01),
+      height: height*0.07,
+      padding: EdgeInsets.only(top: height*0.005,left: width*0.01, bottom: height*0.0001),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         border: Border.all(
@@ -184,13 +184,13 @@ class _AnalyticsState extends State<Analytics> {
           Text("Active calories",
           style: TextStyle(
             color: Colors.grey,
-            fontSize: 20.0,
+            fontSize: 15.0,
           ),),
-          SizedBox(height: height * 0.01,),
+          SizedBox(height: height * 0.001,),
           Text("645 Cal",
           style: TextStyle(
             color: Colors.black,
-            fontSize: 20.0,
+            fontSize: 15.0,
             fontWeight: FontWeight.bold
           ),)
         ],
@@ -201,8 +201,8 @@ class _AnalyticsState extends State<Analytics> {
   Widget trainingTimeView(){
     return Container(
       width: width*0.4,
-      height: height*0.2,
-      padding: EdgeInsets.only(top: height*0.01,bottom: height*0.01),
+      height: height*0.17,
+      padding: EdgeInsets.only(top: height*0.02,bottom: height*0.003),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         color: Color(0xffEAECFF),
@@ -213,11 +213,11 @@ class _AnalyticsState extends State<Analytics> {
           Center(
             child: Text("Training Time",
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 15,
               color: Colors.black
             ),),
           ),
-          SizedBox(height: 20.0,),
+          SizedBox(height: 14.0,),
           Center(
             child: SleekCircularSlider(
               onChange: (double value) {
@@ -235,7 +235,7 @@ class _AnalyticsState extends State<Analytics> {
                 counterClockwise: true,
                 angleRange: 360,
                 startAngle: 270,
-                size: height*0.11,
+                size: height*0.09,
                 customColors: CustomSliderColors(
                   progressBarColor: const Color(0xffA48AED),
                   trackColor: Colors.white,
@@ -273,7 +273,7 @@ class _AnalyticsState extends State<Analytics> {
   Widget cyclingView(){
     return Container(
       width: width*0.5,
-      height: height*0.32,
+      height: height*0.25,
       padding: EdgeInsets.only(top: height*0.01),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
@@ -299,7 +299,7 @@ class _AnalyticsState extends State<Analytics> {
           Padding(
             padding:  EdgeInsets.all(height*0.01),
             child: Container(
-              height: height*0.23,
+              height: height*0.16,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
                   image: DecorationImage(
@@ -317,7 +317,7 @@ class _AnalyticsState extends State<Analytics> {
   Widget heartRate(){
     return Container(
       width: width*0.53,
-      height: height*0.26,
+      height: height*0.2,
       padding: EdgeInsets.only(top: height*0.01),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
@@ -343,7 +343,7 @@ class _AnalyticsState extends State<Analytics> {
           Padding(
             padding:  EdgeInsets.all(height*0.01),
             child: Container(
-              height: height*0.17,
+              height: height*0.11,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
                   image: DecorationImage(
@@ -361,7 +361,7 @@ class _AnalyticsState extends State<Analytics> {
   Widget sleepView(){
     return Container(
       width: width*0.5,
-      height: height*0.2,
+      height: height*0.17,
       padding: EdgeInsets.only(top: height*0.01),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
@@ -387,7 +387,7 @@ class _AnalyticsState extends State<Analytics> {
           Padding(
             padding:  EdgeInsets.all(height*0.01),
             child: Container(
-              height: height*0.10,
+              height: height*0.07,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
                   image: DecorationImage(
@@ -404,7 +404,7 @@ class _AnalyticsState extends State<Analytics> {
   Widget waterView(){
     return Container(
       width: width*0.4,
-      height: height*0.2,
+      height: height*0.17,
       padding: EdgeInsets.only(top: height*0.01),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
@@ -430,7 +430,7 @@ class _AnalyticsState extends State<Analytics> {
           Padding(
             padding:  EdgeInsets.all(height*0.01),
             child: Container(
-              height: height*0.10,
+              height: height*0.07,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
                   image: DecorationImage(
@@ -448,7 +448,7 @@ class _AnalyticsState extends State<Analytics> {
   Widget stepsView(){
     return Container(
       width: width*0.38,
-      height: height*0.15,
+      height: height*0.12,
       padding: EdgeInsets.only(top: height*0.01),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
@@ -511,14 +511,20 @@ class _AnalyticsState extends State<Analytics> {
     return  Scaffold(
         body: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.only(left: 20.0, top: 20.0),
+              padding: const EdgeInsets.only(left: 15.0, top: 5.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     topView(),
-                    SizedBox(height: height*0.02,),
+                    const Text("Today Report",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),),
+                    SizedBox(height: height*0.01,),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -548,7 +554,7 @@ class _AnalyticsState extends State<Analytics> {
                             stepsView(),
                             SizedBox(height: height*0.02,),
                             Container(
-                              height: height*0.09,
+                              height: height*0.06,
                               width: width*0.38,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10.0),
